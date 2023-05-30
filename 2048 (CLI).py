@@ -485,24 +485,3 @@ class GameGrid(Frame):
     def gen(self):
         return randint(0, GRID_LEN - 1)
 
-    def init_matrix(self):
-        self.board = GameBoard()
-        self.add_random_tile()
-        self.add_random_tile()
-
-    def update_grid_cells(self):
-        for i in range(GRID_LEN):
-            for j in range(GRID_LEN):
-                new_number = int(self.board.grid[i][j])
-                if new_number == 0:
-                    self.grid_cells[i][j].configure(text="", bg=BACKGROUND_COLOR_CELL_EMPTY)
-                else:
-                    n = new_number
-                    if new_number > 2048:
-                        c = 2048
-                    else:
-                        c = new_number
-
-                    self.grid_cells[i][j].configure(text=str(n), bg=BACKGROUND_COLOR_DICT[c], fg=CELL_COLOR_DICT[c])
-        self.update_idletasks()
-        
