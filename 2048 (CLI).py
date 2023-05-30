@@ -1,27 +1,4 @@
 
-        for t in possible_tiles:
-            t_board = board.clone()
-            t_board.insert_tile(t[0], t[1])
-            _, utility = self.maximize(t_board, depth + 1)
-
-            for i in range(4):
-                utility_sum[i] += utility[i] * t[2]
-
-        return tuple(utility_sum)
-
-                a[i][j + 1] = 0   
-    return a
-
-@jit
-def justify_left(a, out):
-    for i in [0,1,2,3]:
-        c = 0
-        for j in [0,1,2,3]:
-            if a[i][j] != 0:
-                out[i][c] = a[i][j]
-                c += 1
-    return out
-
 @jit
 def get_available_from_zeros(a):
     uc, dc, lc, rc = False, False, False, False
