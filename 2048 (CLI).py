@@ -4,17 +4,6 @@ import numpy as np
 
 UP, DOWN, LEFT, RIGHT = range(4)
 
-class AI():
-
-    def get_move(self, board):
-        best_move, _ = self.maximize(board)
-        return best_move
-
-    def eval_board(self, board, n_empty): 
-        grid = board.grid
-
-        utility = 0
-        smoothness = 0
 
         big_t = np.sum(np.power(grid, 2))
         s_grid = np.sqrt(grid)
