@@ -5,20 +5,7 @@ import numpy as np
 UP, DOWN, LEFT, RIGHT = range(4)
 
 
-        big_t = np.sum(np.power(grid, 2))
-        s_gr
-
-        empty_u = n_empty * empty_w
-        smooth_u = smoothness ** smoothness_w
-        big_t_u = big_t
-
-        utility += big_t
-        utility += empty_u
-        utility += smooth_u
-
-        return (utility, empty_u, smooth_u, big_t_u)
-
-    def maximize(self, board, depth = 0):
+        big_t = np.sum(np
         moves = board.get_available_moves()
         moves_boards = []
 
