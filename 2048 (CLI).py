@@ -1,36 +1,4 @@
 
-            self.grid = self.grid[:,::-1].T
-            self.grid = justify_left(self.grid, z1)
-            self.grid = merge(self.grid)
-            self.grid = justify_left(self.grid, z2)
-            self.grid = self.grid.T[:,::-1]
-        if dir == DOWN:
-            self.grid = self.grid.T[:,::-1]
-            self.grid = justify_left(self.grid, z1)
-            self.grid = merge(self.grid)
-            self.grid = justify_left(self.grid, z2)
-            self.grid = self.grid[:,::-1].T
-        if dir == LEFT:
-            self.grid = justify_left(self.grid, z1)
-            self.grid = merge(self.grid)
-            self.grid = justify_left(self.grid, z2)
-        if dir == RIGHT:
-            self.grid = self.grid[:,::-1]
-            self.grid = self.grid[::-1,:]
-            self.grid = justify_left(self.grid, z1)
-            self.grid = merge(self.grid)
-            self.grid = justify_left(self.grid, z2)
-            self.grid = self.grid[:,::-1]
-            self.grid = self.grid[::-1,:]
-
-        if get_avail_call:
-            return not (clone.grid == self.grid).all()
-        else:
-            return None
-
-    def get_available_moves(self, dirs = dirs):
-        available_moves = []
-        
         a1 = get_available_from_zeros(self.grid)
 
         for x in dirs:
