@@ -29,17 +29,6 @@ im
 
         return tuple(utility_sum)
 
-import numpy as np
-from numba import jit
-
-dirs = [UP, DOWN, LEFT, RIGHT] = range(4)
-
-@jit
-def merge(a):
-    for i in [0,1,2,3]:
-        for j in [0,1,2]:
-            if a[i][j] == a[i][j + 1] and a[i][j] != 0:
-                a[i][j] *= 2
                 a[i][j + 1] = 0   
     return a
 
