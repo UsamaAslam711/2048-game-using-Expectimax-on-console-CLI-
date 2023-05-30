@@ -5,22 +5,7 @@ import numpy as np
 UP, DOWN, LEFT, RIGHT = range(4)
 
 
-        big_t = np.sum(np
-        moves = board.get_available_moves()
-        moves_boards = []
-
-        for m in moves:
-            m_board = board.clone()
-            m_board.move(m)
-            moves_boards.append((m, m_board))
-
-        max_utility = (float('-inf'),0,0,0)
-        best_direction = None
-
-        for mb in moves_boards:
-            utility = self.chance(mb[1], depth + 1)
-
-            if utility[0] >= max_utility[0]:
+        big_t  
                 max_utility = utility
                 best_direction = mb[0]
 
