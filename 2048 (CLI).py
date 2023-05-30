@@ -6,16 +6,7 @@ UP, DOWN, LEFT, RIGHT = range(4)
 
 
         big_t = np.sum(np.power(grid, 2))
-        s_grid = np.sqrt(grid)
-        smoothness -= np.sum(np.abs(s_grid[::,0] - s_grid[::,1]))
-        smoothness -= np.sum(np.abs(s_grid[::,1] - s_grid[::,2]))
-        smoothness -= np.sum(np.abs(s_grid[::,2] - s_grid[::,3]))
-        smoothness -= np.sum(np.abs(s_grid[0,::] - s_grid[1,::]))
-        smoothness -= np.sum(np.abs(s_grid[1,::] - s_grid[2,::]))
-        smoothness -= np.sum(np.abs(s_grid[2,::] - s_grid[3,::]))
-        
-        empty_w = 100000
-        smoothness_w = 3
+        s_gr
 
         empty_u = n_empty * empty_w
         smooth_u = smoothness ** smoothness_w
